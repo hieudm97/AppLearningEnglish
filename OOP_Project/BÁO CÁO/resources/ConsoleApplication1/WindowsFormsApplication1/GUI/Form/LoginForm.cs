@@ -26,5 +26,20 @@ namespace WindowsFormsApplication1
         {
          
         }
+
+        private void bunifuCards2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            bunifuCards1.BringToFront();
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            bunifuCards2.BringToFront(); 
+        }
     }
 }
