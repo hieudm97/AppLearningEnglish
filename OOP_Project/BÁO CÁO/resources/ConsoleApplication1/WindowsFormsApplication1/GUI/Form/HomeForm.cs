@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+     
 
         private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -33,7 +36,14 @@ namespace WindowsFormsApplication1
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

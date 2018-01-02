@@ -121,3 +121,7 @@ C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\re
 C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ViewInfoUser.resources
 C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.dll
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.xml
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.xml

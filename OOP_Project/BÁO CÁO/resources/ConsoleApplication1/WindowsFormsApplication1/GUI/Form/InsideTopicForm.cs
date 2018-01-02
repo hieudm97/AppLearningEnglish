@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
 
         private void InsideTopicForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+            Application.Exit();
         }
     }
 }

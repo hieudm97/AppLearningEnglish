@@ -202,6 +202,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartLessonForm";
             this.Text = "FormStartLesson";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StartLessonForm_FormClosed);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

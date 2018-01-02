@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OOP_PROJECTModelStoreContainer" CdmEntityContainer="OOP_PROJECTEntities">
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="OOP_PROJECTModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

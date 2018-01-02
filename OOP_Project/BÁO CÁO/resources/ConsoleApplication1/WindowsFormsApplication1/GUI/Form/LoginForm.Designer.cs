@@ -283,6 +283,8 @@
             this.bunifuMaterialTextbox6.Size = new System.Drawing.Size(222, 36);
             this.bunifuMaterialTextbox6.TabIndex = 11;
             this.bunifuMaterialTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMaterialTextbox6.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox6_OnValueChanged);
+            this.bunifuMaterialTextbox6.DoubleClick += new System.EventHandler(this.bunifuMaterialTextbox6_DoubleClick);
             // 
             // bunifuFlatButton4
             // 
@@ -319,6 +321,7 @@
             this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // bunifuMaterialTextbox5
             // 
@@ -425,13 +428,14 @@
             this.ClientSize = new System.Drawing.Size(625, 471);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.bunifuCards2);
+            this.Controls.Add(this.bunifuCards1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.bunifuCards2.ResumeLayout(false);

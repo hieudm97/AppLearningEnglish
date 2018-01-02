@@ -36,9 +36,9 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.viewInfoUser1 = new WindowsFormsApplication1.ViewInfoUser();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.viewInfoUser1 = new WindowsFormsApplication1.ViewInfoUser();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -132,16 +132,6 @@
             this.panel3.Size = new System.Drawing.Size(233, 509);
             this.panel3.TabIndex = 1;
             // 
-            // viewInfoUser1
-            // 
-            this.viewInfoUser1.BackColor = System.Drawing.Color.LightGray;
-            this.viewInfoUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewInfoUser1.Location = new System.Drawing.Point(0, 0);
-            this.viewInfoUser1.Margin = new System.Windows.Forms.Padding(1);
-            this.viewInfoUser1.Name = "viewInfoUser1";
-            this.viewInfoUser1.Size = new System.Drawing.Size(233, 509);
-            this.viewInfoUser1.TabIndex = 0;
-            // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
@@ -171,6 +161,16 @@
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.DoubleClick += new System.EventHandler(this.tableLayoutPanel1_DoubleClick);
             // 
+            // viewInfoUser1
+            // 
+            this.viewInfoUser1.BackColor = System.Drawing.Color.LightGray;
+            this.viewInfoUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewInfoUser1.Location = new System.Drawing.Point(0, 0);
+            this.viewInfoUser1.Margin = new System.Windows.Forms.Padding(1);
+            this.viewInfoUser1.Name = "viewInfoUser1";
+            this.viewInfoUser1.Size = new System.Drawing.Size(233, 509);
+            this.viewInfoUser1.TabIndex = 0;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,6 +184,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
             this.Text = "Form3";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeForm_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);

@@ -22,5 +22,10 @@ namespace WindowsFormsApplication1
         {
             
         }
+
+        private void WelcomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }
