@@ -1,13 +1,286 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="OOP_PROJECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="USER">
+  <EntityType Name="Baihoc">
     <Key>
-      <PropertyRef Name="USERNAME" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="EXPERIENCE" Type="float" />
   </EntityType>
+  <EntityType Name="Baitap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="EXPERIENCE" Type="float" />
+  </EntityType>
+  <EntityType Name="Cauhoi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOIDUNG" Type="nvarchar" MaxLength="50" />
+    <Property Name="CORRECT_ANS_ID" Type="int" />
+    <Property Name="IMAGE" Type="image" />
+  </EntityType>
+  <EntityType Name="Cautraloi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOIDUNG" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Chitietbaihoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_BAIHOC" Type="int" />
+    <Property Name="ID_NOIDUNG" Type="int" />
+  </EntityType>
+  <EntityType Name="Chitietbaitap">
+    <Key>
+      <PropertyRef Name="ID_BAITAP" />
+    </Key>
+    <Property Name="ID_BAITAP" Type="int" Nullable="false" />
+    <Property Name="ID_CAUHOI" Type="int" />
+  </EntityType>
+  <EntityType Name="Nguoidung">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+    <Property Name="IMAGE" Type="image" />
+    <Property Name="EXPERIENCE" Type="float" />
+    <Property Name="CELLNUMBER" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Nhac">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="PATH" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Noidung">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HINH" Type="image" />
+    <Property Name="TUVUNG" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'OOP_PROJECT.dbo.Quanly' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Quanly">
+          <Property Name="ID_CAUHOI" Type="int" />
+          <Property Name="ID_CAUTRALOI" Type="int" />
+        </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tmp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USER" Type="int" />
+    <Property Name="ID_TOPIC" Type="int" />
+  </EntityType>
+  <EntityType Name="TMP2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TOPIC" Type="int" />
+    <Property Name="ID_BAIHOC" Type="int" />
+    <Property Name="ID_BAITAP" Type="int" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="HINH" Type="image" />
+    <Property Name="REWARD" Type="float" />
+  </EntityType>
+  <Association Name="FK_Chitietbaihoc_Baihoc">
+    <End Role="Baihoc" Type="Self.Baihoc" Multiplicity="0..1" />
+    <End Role="Chitietbaihoc" Type="Self.Chitietbaihoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Baihoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Chitietbaihoc">
+        <PropertyRef Name="ID_BAIHOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chitietbaihoc_Noidung">
+    <End Role="Noidung" Type="Self.Noidung" Multiplicity="0..1" />
+    <End Role="Chitietbaihoc" Type="Self.Chitietbaihoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Noidung">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Chitietbaihoc">
+        <PropertyRef Name="ID_NOIDUNG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chitietbaitap_Baitap">
+    <End Role="Baitap" Type="Self.Baitap" Multiplicity="1" />
+    <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Baitap">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Chitietbaitap">
+        <PropertyRef Name="ID_BAITAP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chitietbaitap_Cauhoi">
+    <End Role="Cauhoi" Type="Self.Cauhoi" Multiplicity="0..1" />
+    <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cauhoi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Chitietbaitap">
+        <PropertyRef Name="ID_CAUHOI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Quanly_Cauhoi" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Quanly_Cautraloi" />-->
+  <Association Name="FK_Tmp_Nguoidung">
+    <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="0..1" />
+    <End Role="Tmp" Type="Self.Tmp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nguoidung">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tmp">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tmp_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="0..1" />
+    <End Role="Tmp" Type="Self.Tmp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tmp">
+        <PropertyRef Name="ID_TOPIC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TMP2_Baihoc">
+    <End Role="Baihoc" Type="Self.Baihoc" Multiplicity="0..1" />
+    <End Role="TMP2" Type="Self.TMP2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Baihoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TMP2">
+        <PropertyRef Name="ID_BAIHOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TMP2_Baitap">
+    <End Role="Baitap" Type="Self.Baitap" Multiplicity="0..1" />
+    <End Role="TMP2" Type="Self.TMP2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Baitap">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TMP2">
+        <PropertyRef Name="ID_BAITAP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TMP2_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="0..1" />
+    <End Role="TMP2" Type="Self.TMP2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TMP2">
+        <PropertyRef Name="ID_TOPIC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="OOP_PROJECTModelStoreContainer">
-    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Baihoc" EntityType="Self.Baihoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Baitap" EntityType="Self.Baitap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cauhoi" EntityType="Self.Cauhoi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cautraloi" EntityType="Self.Cautraloi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chitietbaihoc" EntityType="Self.Chitietbaihoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chitietbaitap" EntityType="Self.Chitietbaitap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nguoidung" EntityType="Self.Nguoidung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nhac" EntityType="Self.Nhac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Noidung" EntityType="Self.Noidung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tmp" EntityType="Self.Tmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TMP2" EntityType="Self.TMP2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Topic" EntityType="Self.Topic" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Chitietbaihoc_Baihoc" Association="Self.FK_Chitietbaihoc_Baihoc">
+      <End Role="Baihoc" EntitySet="Baihoc" />
+      <End Role="Chitietbaihoc" EntitySet="Chitietbaihoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chitietbaihoc_Noidung" Association="Self.FK_Chitietbaihoc_Noidung">
+      <End Role="Noidung" EntitySet="Noidung" />
+      <End Role="Chitietbaihoc" EntitySet="Chitietbaihoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chitietbaitap_Baitap" Association="Self.FK_Chitietbaitap_Baitap">
+      <End Role="Baitap" EntitySet="Baitap" />
+      <End Role="Chitietbaitap" EntitySet="Chitietbaitap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chitietbaitap_Cauhoi" Association="Self.FK_Chitietbaitap_Cauhoi">
+      <End Role="Cauhoi" EntitySet="Cauhoi" />
+      <End Role="Chitietbaitap" EntitySet="Chitietbaitap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tmp_Nguoidung" Association="Self.FK_Tmp_Nguoidung">
+      <End Role="Nguoidung" EntitySet="Nguoidung" />
+      <End Role="Tmp" EntitySet="Tmp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tmp_Topic" Association="Self.FK_Tmp_Topic">
+      <End Role="Topic" EntitySet="Topic" />
+      <End Role="Tmp" EntitySet="Tmp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TMP2_Baihoc" Association="Self.FK_TMP2_Baihoc">
+      <End Role="Baihoc" EntitySet="Baihoc" />
+      <End Role="TMP2" EntitySet="TMP2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TMP2_Baitap" Association="Self.FK_TMP2_Baitap">
+      <End Role="Baitap" EntitySet="Baitap" />
+      <End Role="TMP2" EntitySet="TMP2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TMP2_Topic" Association="Self.FK_TMP2_Topic">
+      <End Role="Topic" EntitySet="Topic" />
+      <End Role="TMP2" EntitySet="TMP2" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -428,8 +428,8 @@
             this.ClientSize = new System.Drawing.Size(625, 471);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);
+            this.Controls.Add(this.bunifuCards2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";

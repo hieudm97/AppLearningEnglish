@@ -62,9 +62,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\BUS_User.cs" />
-    <Compile Include="DAL\DAL_User.cs" />
-    <Compile Include="DTO\User.cs" />
+    <Compile Include="BUS\BUS_Nguoidung.cs" />
+    <Compile Include="DAL\DAL_Nguoidung.cs" />
+    <Compile Include="DATABASE\Baihoc.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Baitap.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Cauhoi.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Cautraloi.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Chitietbaihoc.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Chitietbaitap.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\DatabaseFirstModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFirstModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\DatabaseFirstModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\DatabaseFirstModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFirstModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Nguoidung.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Nhac.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Noidung.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\sysdiagram.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Tmp.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\TMP2.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATABASE\Topic.cs">
+      <DependentUpon>DatabaseFirstModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControl\Exercise.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,6 +239,13 @@
     <EmbeddedResource Include="GUI\UserControl\ViewInfoUser.resx">
       <DependentUpon>ViewInfoUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="DATABASE\DatabaseFirstModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseFirstModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DATABASE\DatabaseFirstModel.edmx.diagram">
+      <DependentUpon>DatabaseFirstModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -201,11 +261,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DATABASE\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Properties\loading_white.gif" />
+    <Content Include="DATABASE\DatabaseFirstModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseFirstModel.edmx</DependentUpon>
+      <LastGenOutput>DatabaseFirstModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DATABASE\DatabaseFirstModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseFirstModel.edmx</DependentUpon>
+      <LastGenOutput>DatabaseFirstModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Resource\1H8eQdN.png" />
     <Content Include="Resource\257c1fe000a57cf602cae5b727d36f17.png" />
     <Content Include="Resource\306473.png" />

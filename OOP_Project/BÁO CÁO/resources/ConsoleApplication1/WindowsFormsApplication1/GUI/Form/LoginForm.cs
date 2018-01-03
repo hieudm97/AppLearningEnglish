@@ -9,13 +9,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.BUS;
-using WindowsFormsApplication1.DTO;
+using WindowsFormsApplication1.DATABASE;
 
 namespace WindowsFormsApplication1
 {
     public partial class LoginForm : Form
     {
-        BUS_User bus_user = new BUS_User();
+        private BUS_Nguoidung bus_nguoidung = new BUS_Nguoidung();
 
         public LoginForm()
         {
@@ -34,14 +34,17 @@ namespace WindowsFormsApplication1
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-            User user = new User(bunifuMaterialTextbox1.Text,bunifuMaterialTextbox2.Text);
-            if (bus_user.checkUser(user))
+            String username = bunifuMaterialTextbox1.Text;
+            String password = bunifuMaterialTextbox2.Text;
+            Nguoidung nguoidung = new Nguoidung(username, password);
+            if (bus_nguoidung.checkNguoidung(nguoidung))
             {
                 HomeForm homeform = new HomeForm();
                 this.Hide();
                 homeform.Show();
             }
-            
+            else
+                MessageBox.Show("Please input again!!!!");
         }
 
         private void bunifuCards2_Paint(object sender, PaintEventArgs e)
@@ -66,12 +69,20 @@ namespace WindowsFormsApplication1
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
+            String username = bunifuMaterialTextbox3.Text;
+            String password = bunifuMaterialTextbox4.Text;
+            String cellnumber = bunifuMaterialTextbox5.Text;
+            int experience = 1;
+            Nguoidung nguoidung = new Nguoidung(username, password, cellnumber, experience);
+            if (bus_nguoidung.addUser(nguoidung))
+                MessageBox.Show("SUCESSFULLY!!!");
+            else
+                MessageBox.Show("Please insert again!!!");
 
         }
 
         private void bunifuMaterialTextbox6_DoubleClick(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
 
         }
 
