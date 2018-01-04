@@ -27,6 +27,7 @@ namespace WindowsFormsApplication1
 
         public HomeForm(Nguoidung nguoidung)
         {
+            InitializeComponent();
             this.nguoidung = nguoidung;
             khoitao();
         }
@@ -41,22 +42,22 @@ namespace WindowsFormsApplication1
         private void loadTopic()
         {
             List<Topic> topics = bus_topic.getTopics();
-            List<UserControl> lst_usercontrol = ganTopicsToUc(topics);
+            List<MyTopics> lst_usercontrol = ganTopicsToUc(topics);
             ganUcVaoTableLayout(lst_usercontrol);
         }
 
-        private void ganUcVaoTableLayout(List<UserControl> lst_usercontrol)
+        private void ganUcVaoTableLayout(List<MyTopics> lst_usercontrol)
         {
-            foreach(UserControl tmp in lst_usercontrol)
+            foreach(MyTopics tmp in lst_usercontrol)
             {
                 tableLayoutPanel1.Controls.Add(tmp);
             }
         }
 
-        private List<UserControl> ganTopicsToUc(List<Topic> topics)
+        private List<MyTopics> ganTopicsToUc(List<Topic> topics)
         {
             List<Topic> lst_topics = bus_topic.getTopics();
-            List<UserControl> lstUC_Topic = new List<UserControl>();
+            List<MyTopics> lstUC_Topic = new List<MyTopics>();
             foreach(Topic tmp in lst_topics)
             {
                 MyTopics uc_myTopic = new MyTopics(tmp);
@@ -67,7 +68,7 @@ namespace WindowsFormsApplication1
 
         private void khoiTaoThongTinNguoiDung(Nguoidung nguoidung)
         {
-            pictureBox1.Image = convertImageToByte(nguoidung.IMAGE);
+           // pictureBox1.Image = convertImageToByte(nguoidung.IMAGE);
             bunifuCustomLabel1.Text = nguoidung.USERNAME;
             int sotopicdahoc = bus_tmp.getSoTopicDaHoc(nguoidung.ID);
             xulycircleprogress(sotopicdahoc);

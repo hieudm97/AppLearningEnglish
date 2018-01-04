@@ -20,7 +20,15 @@ namespace WindowsFormsApplication1.DATABASE
             this.Chitietbaitaps = new HashSet<Chitietbaitap>();
             this.TMP2 = new HashSet<TMP2>();
         }
-    
+
+        public Baitap(int iD, string nAME, string dESCRIPTION, double? eXPERIENCE)
+        {
+            ID = iD;
+            NAME = nAME;
+            DESCRIPTION = dESCRIPTION;
+            EXPERIENCE = eXPERIENCE;
+        }
+
         public int ID { get; set; }
         public string NAME { get; set; }
         public string DESCRIPTION { get; set; }

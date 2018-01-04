@@ -20,12 +20,22 @@ namespace WindowsFormsApplication1.DATABASE
             this.Chitietbaihocs = new HashSet<Chitietbaihoc>();
             this.TMP2 = new HashSet<TMP2>();
         }
-    
+
+        public Baihoc(int iD, string nAME, string dESCRIPTION, double? eXPERIENCE)
+        {
+            ID = iD;
+            NAME = nAME;
+            DESCRIPTION = dESCRIPTION;
+            EXPERIENCE = eXPERIENCE;
+        }
+
         public int ID { get; set; }
         public string NAME { get; set; }
         public string DESCRIPTION { get; set; }
         public Nullable<double> EXPERIENCE { get; set; }
-    
+
+        
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chitietbaihoc> Chitietbaihocs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
