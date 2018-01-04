@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
             Nguoidung nguoidung = new Nguoidung(username, password);
             if (bus_nguoidung.checkNguoidung(nguoidung))
             {
-                HomeForm homeform = new HomeForm();
+                HomeForm homeform = new HomeForm(nguoidung);
                 this.Hide();
                 homeform.Show();
             }

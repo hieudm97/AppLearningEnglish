@@ -51,6 +51,7 @@
     <EntitySetMapping Name="Chitietbaitaps">
       <EntityTypeMapping TypeName="OOP_PROJECTModel.Chitietbaitap">
         <MappingFragment StoreEntitySet="Chitietbaitap">
+          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ID_BAITAP" ColumnName="ID_BAITAP" />
           <ScalarProperty Name="ID_CAUHOI" ColumnName="ID_CAUHOI" />
         </MappingFragment>
@@ -68,21 +69,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Nhacs">
-      <EntityTypeMapping TypeName="OOP_PROJECTModel.Nhac">
-        <MappingFragment StoreEntitySet="Nhac">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="NAME" ColumnName="NAME" />
-          <ScalarProperty Name="PATH" ColumnName="PATH" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Noidungs">
       <EntityTypeMapping TypeName="OOP_PROJECTModel.Noidung">
         <MappingFragment StoreEntitySet="Noidung">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="HINH" ColumnName="HINH" />
           <ScalarProperty Name="TUVUNG" ColumnName="TUVUNG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quanlies">
+      <EntityTypeMapping TypeName="OOP_PROJECTModel.Quanly">
+        <MappingFragment StoreEntitySet="Quanly">
+          <ScalarProperty Name="ID_CAUHOI" ColumnName="ID_CAUHOI" />
+          <ScalarProperty Name="ID_CAUTRALOI" ColumnName="ID_CAUTRALOI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -14,7 +14,16 @@ namespace WindowsFormsApplication1.DATABASE
     
     public partial class Cautraloi
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Cautraloi()
+        {
+            this.Quanlies = new HashSet<Quanly>();
+        }
+    
         public int ID { get; set; }
         public string NOIDUNG { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Quanly> Quanlies { get; set; }
     }
 }

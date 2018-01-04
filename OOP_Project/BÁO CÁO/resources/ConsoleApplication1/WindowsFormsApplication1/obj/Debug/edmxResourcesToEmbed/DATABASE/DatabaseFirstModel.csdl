@@ -19,7 +19,7 @@
     <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="EXPERIENCE" Type="Double" />
-    <NavigationProperty Name="Chitietbaitap" Relationship="Self.FK_Chitietbaitap_Baitap" FromRole="Baitap" ToRole="Chitietbaitap" />
+    <NavigationProperty Name="Chitietbaitaps" Relationship="Self.FK_Chitietbaitap_Baitap" FromRole="Baitap" ToRole="Chitietbaitap" />
     <NavigationProperty Name="TMP2" Relationship="Self.FK_TMP2_Baitap" FromRole="Baitap" ToRole="TMP2" />
   </EntityType>
   <EntityType Name="Cauhoi">
@@ -31,6 +31,7 @@
     <Property Name="CORRECT_ANS_ID" Type="Int32" />
     <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Chitietbaitaps" Relationship="Self.FK_Chitietbaitap_Cauhoi" FromRole="Cauhoi" ToRole="Chitietbaitap" />
+    <NavigationProperty Name="Quanlies" Relationship="Self.FK_Quanly_Cauhoi" FromRole="Cauhoi" ToRole="Quanly" />
   </EntityType>
   <EntityType Name="Cautraloi">
     <Key>
@@ -38,6 +39,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NOIDUNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Quanlies" Relationship="Self.FK_Quanly_Cautraloi" FromRole="Cautraloi" ToRole="Quanly" />
   </EntityType>
   <EntityType Name="Chitietbaihoc">
     <Key>
@@ -51,8 +53,9 @@
   </EntityType>
   <EntityType Name="Chitietbaitap">
     <Key>
-      <PropertyRef Name="ID_BAITAP" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_BAITAP" Type="Int32" Nullable="false" />
     <Property Name="ID_CAUHOI" Type="Int32" />
     <NavigationProperty Name="Baitap" Relationship="Self.FK_Chitietbaitap_Baitap" FromRole="Chitietbaitap" ToRole="Baitap" />
@@ -70,14 +73,6 @@
     <Property Name="CELLNUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Tmps" Relationship="Self.FK_Tmp_Nguoidung" FromRole="Nguoidung" ToRole="Tmp" />
   </EntityType>
-  <EntityType Name="Nhac">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PATH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="Noidung">
     <Key>
       <PropertyRef Name="ID" />
@@ -86,6 +81,16 @@
     <Property Name="HINH" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="TUVUNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Chitietbaihocs" Relationship="Self.FK_Chitietbaihoc_Noidung" FromRole="Noidung" ToRole="Chitietbaihoc" />
+  </EntityType>
+  <EntityType Name="Quanly">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID_CAUHOI" Type="Int32" />
+    <Property Name="ID_CAUTRALOI" Type="Int32" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Cauhoi" Relationship="Self.FK_Quanly_Cauhoi" FromRole="Quanly" ToRole="Cauhoi" />
+    <NavigationProperty Name="Cautraloi" Relationship="Self.FK_Quanly_Cautraloi" FromRole="Quanly" ToRole="Cautraloi" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -156,7 +161,7 @@
   </Association>
   <Association Name="FK_Chitietbaitap_Baitap">
     <End Role="Baitap" Type="Self.Baitap" Multiplicity="1" />
-    <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="0..1" />
+    <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Baitap">
         <PropertyRef Name="ID" />
@@ -186,6 +191,30 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Chitietbaitap">
+        <PropertyRef Name="ID_CAUHOI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quanly_Cauhoi">
+    <End Role="Cauhoi" Type="Self.Cauhoi" Multiplicity="0..1" />
+    <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cauhoi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Quanly">
+        <PropertyRef Name="ID_CAUHOI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quanly_Cautraloi">
+    <End Role="Cautraloi" Type="Self.Cautraloi" Multiplicity="0..1" />
+    <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cautraloi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Quanly">
         <PropertyRef Name="ID_CAUHOI" />
       </Dependent>
     </ReferentialConstraint>
@@ -246,8 +275,8 @@
     <EntitySet Name="Chitietbaihocs" EntityType="Self.Chitietbaihoc" />
     <EntitySet Name="Chitietbaitaps" EntityType="Self.Chitietbaitap" />
     <EntitySet Name="Nguoidungs" EntityType="Self.Nguoidung" />
-    <EntitySet Name="Nhacs" EntityType="Self.Nhac" />
     <EntitySet Name="Noidungs" EntityType="Self.Noidung" />
+    <EntitySet Name="Quanlies" EntityType="Self.Quanly" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Tmps" EntityType="Self.Tmp" />
     <EntitySet Name="TMP2" EntityType="Self.TMP2" />
@@ -271,6 +300,14 @@
     <AssociationSet Name="FK_Chitietbaitap_Cauhoi" Association="Self.FK_Chitietbaitap_Cauhoi">
       <End Role="Cauhoi" EntitySet="Cauhois" />
       <End Role="Chitietbaitap" EntitySet="Chitietbaitaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quanly_Cauhoi" Association="Self.FK_Quanly_Cauhoi">
+      <End Role="Cauhoi" EntitySet="Cauhois" />
+      <End Role="Quanly" EntitySet="Quanlies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quanly_Cautraloi" Association="Self.FK_Quanly_Cautraloi">
+      <End Role="Cautraloi" EntitySet="Cautralois" />
+      <End Role="Quanly" EntitySet="Quanlies" />
     </AssociationSet>
     <AssociationSet Name="FK_Chitietbaihoc_Noidung" Association="Self.FK_Chitietbaihoc_Noidung">
       <End Role="Noidung" EntitySet="Noidungs" />

@@ -12,10 +12,13 @@ namespace WindowsFormsApplication1.DATABASE
     using System;
     using System.Collections.Generic;
     
-    public partial class Nhac
+    public partial class Quanly
     {
+        public Nullable<int> ID_CAUHOI { get; set; }
+        public Nullable<int> ID_CAUTRALOI { get; set; }
         public int ID { get; set; }
-        public string NAME { get; set; }
-        public string PATH { get; set; }
+    
+        public virtual Cauhoi Cauhoi { get; set; }
+        public virtual Cautraloi Cautraloi { get; set; }
     }
 }

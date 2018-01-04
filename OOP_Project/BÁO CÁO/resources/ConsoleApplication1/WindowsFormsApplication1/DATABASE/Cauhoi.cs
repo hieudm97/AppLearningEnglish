@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1.DATABASE
         public Cauhoi()
         {
             this.Chitietbaitaps = new HashSet<Chitietbaitap>();
+            this.Quanlies = new HashSet<Quanly>();
         }
     
         public int ID { get; set; }
@@ -27,5 +28,7 @@ namespace WindowsFormsApplication1.DATABASE
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chitietbaitap> Chitietbaitaps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Quanly> Quanlies { get; set; }
     }
 }

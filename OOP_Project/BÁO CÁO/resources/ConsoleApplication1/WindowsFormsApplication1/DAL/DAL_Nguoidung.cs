@@ -28,5 +28,20 @@ namespace WindowsFormsApplication1.DAL
             }
             return false;
         }
+
+        internal Nguoidung getNguoidung(string username)
+        {
+            Nguoidung nguoidung = new Nguoidung();
+            var select = db.Nguoidungs;
+            foreach(var tmp in select)
+            {
+                if (tmp.USERNAME.Equals(username))
+                {
+                    nguoidung = tmp;
+                }
+            }
+            
+            return nguoidung;
+        }
     }
 }

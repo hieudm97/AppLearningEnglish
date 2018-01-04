@@ -32,8 +32,8 @@ namespace WindowsFormsApplication1.DATABASE
         public virtual DbSet<Chitietbaihoc> Chitietbaihocs { get; set; }
         public virtual DbSet<Chitietbaitap> Chitietbaitaps { get; set; }
         public virtual DbSet<Nguoidung> Nguoidungs { get; set; }
-        public virtual DbSet<Nhac> Nhacs { get; set; }
         public virtual DbSet<Noidung> Noidungs { get; set; }
+        public virtual DbSet<Quanly> Quanlies { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tmp> Tmps { get; set; }
         public virtual DbSet<TMP2> TMP2 { get; set; }

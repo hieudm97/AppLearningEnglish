@@ -20,5 +20,10 @@ namespace WindowsFormsApplication1.BUS
         {
             return dal_nguoidung.checkNguoidung(nguoidung);
         }
+
+        internal Nguoidung getNguoidung(String username)
+        {
+            return dal_nguoidung.getNguoidung(username);
+        }
     }
 }

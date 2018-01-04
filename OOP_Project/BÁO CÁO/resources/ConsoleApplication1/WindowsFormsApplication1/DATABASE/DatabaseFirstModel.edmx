@@ -49,8 +49,9 @@
         </EntityType>
         <EntityType Name="Chitietbaitap">
           <Key>
-            <PropertyRef Name="ID_BAITAP" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_BAITAP" Type="int" Nullable="false" />
           <Property Name="ID_CAUHOI" Type="int" />
         </EntityType>
@@ -65,14 +66,6 @@
           <Property Name="EXPERIENCE" Type="float" />
           <Property Name="CELLNUMBER" Type="nvarchar" MaxLength="10" />
         </EntityType>
-        <EntityType Name="Nhac">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="PATH" Type="nvarchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Noidung">
           <Key>
             <PropertyRef Name="ID" />
@@ -81,12 +74,14 @@
           <Property Name="HINH" Type="image" />
           <Property Name="TUVUNG" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'OOP_PROJECT.dbo.Quanly' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="Quanly">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
           <Property Name="ID_CAUHOI" Type="int" />
           <Property Name="ID_CAUTRALOI" Type="int" />
-        </EntityType>-->
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -149,7 +144,7 @@ warning 6013: The table/view 'OOP_PROJECT.dbo.Quanly' does not have a primary ke
         </Association>
         <Association Name="FK_Chitietbaitap_Baitap">
           <End Role="Baitap" Type="Self.Baitap" Multiplicity="1" />
-          <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="0..1" />
+          <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Baitap">
               <PropertyRef Name="ID" />
@@ -171,12 +166,30 @@ warning 6013: The table/view 'OOP_PROJECT.dbo.Quanly' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, but cannot be found.
-        <Association Name="FK_Quanly_Cauhoi" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, but cannot be found.
-        <Association Name="FK_Quanly_Cautraloi" />-->
+        <Association Name="FK_Quanly_Cauhoi">
+          <End Role="Cauhoi" Type="Self.Cauhoi" Multiplicity="0..1" />
+          <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cauhoi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Quanly">
+              <PropertyRef Name="ID_CAUHOI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quanly_Cautraloi">
+          <End Role="Cautraloi" Type="Self.Cautraloi" Multiplicity="0..1" />
+          <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cautraloi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Quanly">
+              <PropertyRef Name="ID_CAUHOI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tmp_Nguoidung">
           <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="0..1" />
           <End Role="Tmp" Type="Self.Tmp" Multiplicity="*" />
@@ -245,8 +258,8 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <EntitySet Name="Chitietbaihoc" EntityType="Self.Chitietbaihoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Chitietbaitap" EntityType="Self.Chitietbaitap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nguoidung" EntityType="Self.Nguoidung" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Nhac" EntityType="Self.Nhac" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Noidung" EntityType="Self.Noidung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quanly" EntityType="Self.Quanly" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tmp" EntityType="Self.Tmp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TMP2" EntityType="Self.TMP2" Schema="dbo" store:Type="Tables" />
@@ -266,6 +279,14 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <AssociationSet Name="FK_Chitietbaitap_Cauhoi" Association="Self.FK_Chitietbaitap_Cauhoi">
             <End Role="Cauhoi" EntitySet="Cauhoi" />
             <End Role="Chitietbaitap" EntitySet="Chitietbaitap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanly_Cauhoi" Association="Self.FK_Quanly_Cauhoi">
+            <End Role="Cauhoi" EntitySet="Cauhoi" />
+            <End Role="Quanly" EntitySet="Quanly" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanly_Cautraloi" Association="Self.FK_Quanly_Cautraloi">
+            <End Role="Cautraloi" EntitySet="Cautraloi" />
+            <End Role="Quanly" EntitySet="Quanly" />
           </AssociationSet>
           <AssociationSet Name="FK_Tmp_Nguoidung" Association="Self.FK_Tmp_Nguoidung">
             <End Role="Nguoidung" EntitySet="Nguoidung" />
@@ -312,7 +333,7 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EXPERIENCE" Type="Double" />
-          <NavigationProperty Name="Chitietbaitap" Relationship="Self.FK_Chitietbaitap_Baitap" FromRole="Baitap" ToRole="Chitietbaitap" />
+          <NavigationProperty Name="Chitietbaitaps" Relationship="Self.FK_Chitietbaitap_Baitap" FromRole="Baitap" ToRole="Chitietbaitap" />
           <NavigationProperty Name="TMP2" Relationship="Self.FK_TMP2_Baitap" FromRole="Baitap" ToRole="TMP2" />
         </EntityType>
         <EntityType Name="Cauhoi">
@@ -324,6 +345,7 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <Property Name="CORRECT_ANS_ID" Type="Int32" />
           <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Chitietbaitaps" Relationship="Self.FK_Chitietbaitap_Cauhoi" FromRole="Cauhoi" ToRole="Chitietbaitap" />
+          <NavigationProperty Name="Quanlies" Relationship="Self.FK_Quanly_Cauhoi" FromRole="Cauhoi" ToRole="Quanly" />
         </EntityType>
         <EntityType Name="Cautraloi">
           <Key>
@@ -331,6 +353,7 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NOIDUNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Quanlies" Relationship="Self.FK_Quanly_Cautraloi" FromRole="Cautraloi" ToRole="Quanly" />
         </EntityType>
         <EntityType Name="Chitietbaihoc">
           <Key>
@@ -344,8 +367,9 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
         </EntityType>
         <EntityType Name="Chitietbaitap">
           <Key>
-            <PropertyRef Name="ID_BAITAP" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_BAITAP" Type="Int32" Nullable="false" />
           <Property Name="ID_CAUHOI" Type="Int32" />
           <NavigationProperty Name="Baitap" Relationship="Self.FK_Chitietbaitap_Baitap" FromRole="Chitietbaitap" ToRole="Baitap" />
@@ -363,14 +387,6 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <Property Name="CELLNUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Tmps" Relationship="Self.FK_Tmp_Nguoidung" FromRole="Nguoidung" ToRole="Tmp" />
         </EntityType>
-        <EntityType Name="Nhac">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PATH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Noidung">
           <Key>
             <PropertyRef Name="ID" />
@@ -379,6 +395,16 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <Property Name="HINH" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TUVUNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Chitietbaihocs" Relationship="Self.FK_Chitietbaihoc_Noidung" FromRole="Noidung" ToRole="Chitietbaihoc" />
+        </EntityType>
+        <EntityType Name="Quanly">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_CAUHOI" Type="Int32" />
+          <Property Name="ID_CAUTRALOI" Type="Int32" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Cauhoi" Relationship="Self.FK_Quanly_Cauhoi" FromRole="Quanly" ToRole="Cauhoi" />
+          <NavigationProperty Name="Cautraloi" Relationship="Self.FK_Quanly_Cautraloi" FromRole="Quanly" ToRole="Cautraloi" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -449,7 +475,7 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
         </Association>
         <Association Name="FK_Chitietbaitap_Baitap">
           <End Role="Baitap" Type="Self.Baitap" Multiplicity="1" />
-          <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="0..1" />
+          <End Role="Chitietbaitap" Type="Self.Chitietbaitap" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Baitap">
               <PropertyRef Name="ID" />
@@ -479,6 +505,30 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Chitietbaitap">
+              <PropertyRef Name="ID_CAUHOI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quanly_Cauhoi">
+          <End Role="Cauhoi" Type="Self.Cauhoi" Multiplicity="0..1" />
+          <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cauhoi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Quanly">
+              <PropertyRef Name="ID_CAUHOI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quanly_Cautraloi">
+          <End Role="Cautraloi" Type="Self.Cautraloi" Multiplicity="0..1" />
+          <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cautraloi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Quanly">
               <PropertyRef Name="ID_CAUHOI" />
             </Dependent>
           </ReferentialConstraint>
@@ -539,8 +589,8 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <EntitySet Name="Chitietbaihocs" EntityType="Self.Chitietbaihoc" />
           <EntitySet Name="Chitietbaitaps" EntityType="Self.Chitietbaitap" />
           <EntitySet Name="Nguoidungs" EntityType="Self.Nguoidung" />
-          <EntitySet Name="Nhacs" EntityType="Self.Nhac" />
           <EntitySet Name="Noidungs" EntityType="Self.Noidung" />
+          <EntitySet Name="Quanlies" EntityType="Self.Quanly" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Tmps" EntityType="Self.Tmp" />
           <EntitySet Name="TMP2" EntityType="Self.TMP2" />
@@ -564,6 +614,14 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <AssociationSet Name="FK_Chitietbaitap_Cauhoi" Association="Self.FK_Chitietbaitap_Cauhoi">
             <End Role="Cauhoi" EntitySet="Cauhois" />
             <End Role="Chitietbaitap" EntitySet="Chitietbaitaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanly_Cauhoi" Association="Self.FK_Quanly_Cauhoi">
+            <End Role="Cauhoi" EntitySet="Cauhois" />
+            <End Role="Quanly" EntitySet="Quanlies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanly_Cautraloi" Association="Self.FK_Quanly_Cautraloi">
+            <End Role="Cautraloi" EntitySet="Cautralois" />
+            <End Role="Quanly" EntitySet="Quanlies" />
           </AssociationSet>
           <AssociationSet Name="FK_Chitietbaihoc_Noidung" Association="Self.FK_Chitietbaihoc_Noidung">
             <End Role="Noidung" EntitySet="Noidungs" />
@@ -638,6 +696,7 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
           <EntitySetMapping Name="Chitietbaitaps">
             <EntityTypeMapping TypeName="OOP_PROJECTModel.Chitietbaitap">
               <MappingFragment StoreEntitySet="Chitietbaitap">
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_BAITAP" ColumnName="ID_BAITAP" />
                 <ScalarProperty Name="ID_CAUHOI" ColumnName="ID_CAUHOI" />
               </MappingFragment>
@@ -655,21 +714,21 @@ error 6004: The table 'OOP_PROJECT.dbo.Quanly' is referenced by a relationship, 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Nhacs">
-            <EntityTypeMapping TypeName="OOP_PROJECTModel.Nhac">
-              <MappingFragment StoreEntitySet="Nhac">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="PATH" ColumnName="PATH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Noidungs">
             <EntityTypeMapping TypeName="OOP_PROJECTModel.Noidung">
               <MappingFragment StoreEntitySet="Noidung">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="HINH" ColumnName="HINH" />
                 <ScalarProperty Name="TUVUNG" ColumnName="TUVUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quanlies">
+            <EntityTypeMapping TypeName="OOP_PROJECTModel.Quanly">
+              <MappingFragment StoreEntitySet="Quanly">
+                <ScalarProperty Name="ID_CAUHOI" ColumnName="ID_CAUHOI" />
+                <ScalarProperty Name="ID_CAUTRALOI" ColumnName="ID_CAUTRALOI" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,6 +14,7 @@ namespace WindowsFormsApplication1.DATABASE
     
     public partial class Chitietbaitap
     {
+        public int ID { get; set; }
         public int ID_BAITAP { get; set; }
         public Nullable<int> ID_CAUHOI { get; set; }
     

@@ -16,5 +16,12 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        internal void setYourCircleProgressBar(int sotopicdahoc)
+        {
+            bunifuCircleProgressbar1.MaxValue = 100;
+            int value = 100 / sotopicdahoc;
+            bunifuCircleProgressbar1.Value = value;
+        }
     }
 }

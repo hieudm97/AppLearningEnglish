@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1.DATABASE
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Baitap()
         {
+            this.Chitietbaitaps = new HashSet<Chitietbaitap>();
             this.TMP2 = new HashSet<TMP2>();
         }
     
@@ -25,7 +26,8 @@ namespace WindowsFormsApplication1.DATABASE
         public string DESCRIPTION { get; set; }
         public Nullable<double> EXPERIENCE { get; set; }
     
-        public virtual Chitietbaitap Chitietbaitap { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Chitietbaitap> Chitietbaitaps { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TMP2> TMP2 { get; set; }
     }
