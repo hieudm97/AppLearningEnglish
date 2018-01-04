@@ -22,7 +22,20 @@ namespace WindowsFormsApplication1
 
         public StartLesson(Noidung noidung)
         {
+            InitializeComponent();
             this.noidung = noidung;
+            khoitao();
+        }
+
+        private void khoitao()
+        {
+            //pictureBox1.Image = convertByteToImage(noidung.HINH);
+            label1.Text = noidung.TUVUNG;
+        }
+
+        private Image convertByteToImage(byte[] hINH)
+        {
+            throw new NotImplementedException();
         }
     }
 }

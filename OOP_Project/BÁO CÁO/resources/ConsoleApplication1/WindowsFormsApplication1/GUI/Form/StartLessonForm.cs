@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         private Baihoc baihoc;
         private BUS.BUS_Noidung bus_noidung = new BUS.BUS_Noidung();
         List<Noidung> lst_Noidung = new List<Noidung>();
+        List<Label> lst_labels = new List<Label>();
         private int i = 0;
 
         public StartLessonForm()
@@ -28,30 +29,48 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             this.baihoc = baihoc;
             lst_Noidung = bus_noidung.getNoidung(baihoc.ID);
+            lst_labels = khoitaolistlabel();
 
+        }
 
+        private List<Label> khoitaolistlabel()
+        {
+            List<Label> lst_lbls = new List<Label>();
+            lst_labels.Add(label1);
+            lst_labels.Add(label2);
+            lst_labels.Add(label3);
+            lst_labels.Add(label4);
+            lst_labels.Add(label5);
+            return lst_labels;
         }
 
         private void StartLessonForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void StartLessonForm_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
-                if (i == 10)
+                if (i >= 5)
                 {
-                    MessageBox.Show("You have already finished this topic!!!");
-                    this.Close();
+                    MessageBox.Show("Congratulation!!!");
+                    this.Close();                    
                 }
                 else
                 {
                     StartLesson startlesson = new StartLesson(lst_Noidung[i]);
                     panel1.Controls.Add(startlesson);
+                    if (panel1.Contains(startlesson))
+                    {
+                        startlesson.BringToFront();
+                    }
+                    lst_labels[i].BackColor = Color.Chartreuse;
                     i++;
                 }
+                  
+                
                 
             }
         }

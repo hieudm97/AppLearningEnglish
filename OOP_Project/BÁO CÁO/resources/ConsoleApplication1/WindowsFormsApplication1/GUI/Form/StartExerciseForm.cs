@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
 
         private void StartExerciseForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+
         }
     }
 }

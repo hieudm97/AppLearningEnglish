@@ -74,7 +74,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Lime;
+            this.label5.BackColor = System.Drawing.Color.DarkGreen;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(551, 0);
             this.label5.Name = "label5";
@@ -84,7 +84,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Lime;
+            this.label4.BackColor = System.Drawing.Color.DarkGreen;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(414, 0);
             this.label4.Name = "label4";
@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Lime;
+            this.label3.BackColor = System.Drawing.Color.DarkGreen;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(277, 0);
             this.label3.Name = "label3";
@@ -104,7 +104,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Lime;
+            this.label2.BackColor = System.Drawing.Color.DarkGreen;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(140, 0);
             this.label2.Name = "label2";
@@ -114,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Lime;
+            this.label1.BackColor = System.Drawing.Color.DarkGreen;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";

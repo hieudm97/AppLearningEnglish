@@ -71,6 +71,7 @@
     <Compile Include="DAL\DAL_Baihoc.cs" />
     <Compile Include="DAL\DAL_Baitap.cs" />
     <Compile Include="DAL\DAL_Nguoidung.cs" />
+    <Compile Include="DAL\DAL_Noidung.cs" />
     <Compile Include="DAL\DAL_Tmp.cs" />
     <Compile Include="DAL\DAL_Topic.cs" />
     <Compile Include="DATABASE\Baihoc.cs">

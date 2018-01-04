@@ -19,7 +19,14 @@ namespace WindowsFormsApplication1.DATABASE
         {
             this.Chitietbaihocs = new HashSet<Chitietbaihoc>();
         }
-    
+
+        public Noidung(int iD, byte[] hINH, string tUVUNG)
+        {
+            ID = iD;
+            HINH = hINH;
+            TUVUNG = tUVUNG;
+        }
+
         public int ID { get; set; }
         public byte[] HINH { get; set; }
         public string TUVUNG { get; set; }
