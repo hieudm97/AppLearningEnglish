@@ -56,6 +56,7 @@ namespace WindowsFormsApplication1
                 if (i >= 5)
                 {
                     MessageBox.Show("Congratulation!!!");
+
                     this.Close();                    
                 }
                 else
@@ -70,8 +71,6 @@ namespace WindowsFormsApplication1
                     i++;
                 }
                   
-                
-                
             }
         }
     }

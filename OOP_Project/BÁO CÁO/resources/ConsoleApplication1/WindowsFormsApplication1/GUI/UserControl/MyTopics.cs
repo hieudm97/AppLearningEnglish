@@ -50,8 +50,18 @@ namespace WindowsFormsApplication1
 
         private void panel1_DoubleClick(object sender, EventArgs e)
         {
+            HienThiTopic();
+        }
+
+        private void HienThiTopic()
+        {
             InsideTopicForm insidetopicform = new InsideTopicForm(topic);
             insidetopicform.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HienThiTopic();
         }
     }
 }

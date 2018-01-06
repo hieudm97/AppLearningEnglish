@@ -35,7 +35,8 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
+            StartExerciseForm startexerciseform = new StartExerciseForm(tmp);
+            startexerciseform.ShowDialog();
         }
     }
 }

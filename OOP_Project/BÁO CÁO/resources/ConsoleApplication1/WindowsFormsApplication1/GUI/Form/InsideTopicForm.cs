@@ -97,7 +97,11 @@ namespace WindowsFormsApplication1
 
         private void InsideTopicForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

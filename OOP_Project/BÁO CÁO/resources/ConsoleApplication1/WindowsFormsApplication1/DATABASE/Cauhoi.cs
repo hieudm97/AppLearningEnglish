@@ -20,7 +20,15 @@ namespace WindowsFormsApplication1.DATABASE
             this.Chitietbaitaps = new HashSet<Chitietbaitap>();
             this.Quanlies = new HashSet<Quanly>();
         }
-    
+
+        public Cauhoi(int iD, string nOIDUNG, int? cORRECT_ANS_ID, byte[] iMAGE)
+        {
+            ID = iD;
+            NOIDUNG = nOIDUNG;
+            CORRECT_ANS_ID = cORRECT_ANS_ID;
+            IMAGE = iMAGE;
+        }
+
         public int ID { get; set; }
         public string NOIDUNG { get; set; }
         public Nullable<int> CORRECT_ANS_ID { get; set; }

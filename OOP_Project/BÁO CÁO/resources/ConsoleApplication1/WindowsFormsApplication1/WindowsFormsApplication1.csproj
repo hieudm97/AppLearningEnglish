@@ -64,12 +64,16 @@
   <ItemGroup>
     <Compile Include="BUS\BUS_Baihoc.cs" />
     <Compile Include="BUS\BUS_Baitap.cs" />
+    <Compile Include="BUS\BUS_Cauhoi.cs" />
+    <Compile Include="BUS\BUS_Cautraloi.cs" />
     <Compile Include="BUS\BUS_Nguoidung.cs" />
     <Compile Include="BUS\BUS_Noidung.cs" />
     <Compile Include="BUS\BUS_Tmp.cs" />
     <Compile Include="BUS\BUS_Topic.cs" />
     <Compile Include="DAL\DAL_Baihoc.cs" />
     <Compile Include="DAL\DAL_Baitap.cs" />
+    <Compile Include="DAL\DAL_Cauhoi.cs" />
+    <Compile Include="DAL\DAL_Cautraloi.cs" />
     <Compile Include="DAL\DAL_Nguoidung.cs" />
     <Compile Include="DAL\DAL_Noidung.cs" />
     <Compile Include="DAL\DAL_Tmp.cs" />
@@ -253,6 +257,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DatabaseFirstModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="DATABASE\DatabaseFirstModel.edmx.diagram">
       <DependentUpon>DatabaseFirstModel.edmx</DependentUpon>
     </None>

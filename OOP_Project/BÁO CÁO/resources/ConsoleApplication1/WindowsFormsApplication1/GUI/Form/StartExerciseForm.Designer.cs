@@ -36,7 +36,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.startExercise1 = new WindowsFormsApplication1.StartExercise();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -44,7 +43,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -124,20 +122,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.startExercise1);
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(70, 152);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 399);
             this.panel1.TabIndex = 3;
-            // 
-            // startExercise1
-            // 
-            this.startExercise1.BackColor = System.Drawing.Color.White;
-            this.startExercise1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startExercise1.Location = new System.Drawing.Point(0, 0);
-            this.startExercise1.Name = "startExercise1";
-            this.startExercise1.Size = new System.Drawing.Size(696, 399);
-            this.startExercise1.TabIndex = 0;
             // 
             // bunifuCustomLabel6
             // 
@@ -158,16 +147,17 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuCustomLabel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "StartExerciseForm";
             this.Text = "FormStartExercise";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StartExerciseForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StartExerciseForm_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -177,7 +167,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private StartExercise startExercise1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;

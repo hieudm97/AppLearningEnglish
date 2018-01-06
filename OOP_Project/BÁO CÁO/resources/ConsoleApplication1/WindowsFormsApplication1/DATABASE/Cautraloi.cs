@@ -19,7 +19,13 @@ namespace WindowsFormsApplication1.DATABASE
         {
             this.Quanlies = new HashSet<Quanly>();
         }
-    
+
+        public Cautraloi(int iD, string nOIDUNG)
+        {
+            ID = iD;
+            NOIDUNG = nOIDUNG;
+        }
+
         public int ID { get; set; }
         public string NOIDUNG { get; set; }
     
