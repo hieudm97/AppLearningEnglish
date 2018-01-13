@@ -109,17 +109,24 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                if (startExerciseForm.Somang <= -1)
+                if (startExerciseForm.Somang == 0)
                 {
                     MessageBox.Show("You loose!!!");
                     startExerciseForm.Close();
                 }
                 else
                 {
+                    
                     TableLayoutPanel tablelayout = startExerciseForm.getTimeLable();
                     PictureBox pic = (PictureBox)tablelayout.GetControlFromPosition(startExerciseForm.Somang - 1, 0);
-                    pic.Visible = false;
                     startExerciseForm.Somang -= 1;
+                    pic.Visible = false;
+                    if (startExerciseForm.Somang == 0)
+                    {
+                        MessageBox.Show("You loose!!!");
+                        startExerciseForm.Close();
+                    }
+
                 }
             }
             catch(Exception e)

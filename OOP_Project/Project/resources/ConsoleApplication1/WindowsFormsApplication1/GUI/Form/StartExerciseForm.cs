@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         private BUS.BUS_Cauhoi bus_cauhoi = new BUS.BUS_Cauhoi();
         private int i = 0;
         private BUS.BUS_Nguoidung bus_nguoidung = new BUS.BUS_Nguoidung();
-        private int somang = 5;
+        private int somang = 3;
 
         public int Somang
         {
@@ -58,24 +58,34 @@ namespace WindowsFormsApplication1
             {
                 if(i >= 5)
                 {
-                   
-                    MessageBox.Show("Congratulation!!! You receive " + tmp.EXPERIENCE.ToString() + " from this exercise.");
-                    Nguoidung nguoidung = Session.nguoidung;
-                    bus_nguoidung.upDateMyExp(nguoidung, tmp.EXPERIENCE);
-                    this.Close();
+                    hoanThanhBaiTap();
                 }
                 else
                 {
-                    StartExercise startexercise = new StartExercise(lst_cauhoi[i],this,Somang);
-                    panel1.Controls.Add(startexercise);
-                    if (panel1.Contains(startexercise))
-                    {
-                        startexercise.BringToFront();
-                    }
-                    i++;
+                    chuyenCauHoiKeTiep();
                 }
-               
+
             }
+        }
+
+        private void chuyenCauHoiKeTiep()
+        {
+
+            StartExercise startexercise = new StartExercise(lst_cauhoi[i], this, Somang);
+            panel1.Controls.Add(startexercise);
+            if (panel1.Contains(startexercise))
+            {
+                startexercise.BringToFront();
+            }
+            i++;
+        }
+
+        private void hoanThanhBaiTap()
+        {
+            MessageBox.Show("Congratulation!!! You receive " + tmp.EXPERIENCE.ToString() + " from this exercise.");
+            Nguoidung nguoidung = Session.nguoidung;
+            bus_nguoidung.upDateMyExp(nguoidung, tmp.EXPERIENCE);
+            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
