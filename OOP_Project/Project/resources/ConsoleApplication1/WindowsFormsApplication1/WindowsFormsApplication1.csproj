@@ -255,8 +255,6 @@
     <EmbeddedResource Include="GUI\UserControl\ViewInfoUser.resx">
       <DependentUpon>ViewInfoUser.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <EntityDeploy Include="DATABASE\DatabaseFirstModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DatabaseFirstModel.Designer.cs</LastGenOutput>

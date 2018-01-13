@@ -125,3 +125,28 @@ C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\re
 C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.xml
 C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\BÁO CÁO\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.dll
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.xml
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Exercise.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.WelcomeForm.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LoginForm.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HomeForm.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.StartExerciseForm.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.StartLessonForm.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Lesson.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.InsideTopicForm.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MyTopics.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.StartExercise.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.StartLesson.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ViewInfoUser.resources
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\Third_year\OOP\AppLearningEnglish\OOP_Project\Project\resources\ConsoleApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
