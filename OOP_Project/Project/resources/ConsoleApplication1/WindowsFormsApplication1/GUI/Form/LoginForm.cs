@@ -70,23 +70,47 @@ namespace WindowsFormsApplication1
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
-            String username = bunifuMaterialTextbox3.Text;
-            String password = bunifuMaterialTextbox4.Text;
-            String CELLNUMBER = bunifuMaterialTextbox5.Text;
-            int experience = 1;
-            Nguoidung nguoidung = new Nguoidung(username, password, CELLNUMBER, experience);
-            if(!bus_nguoidung.checkDuplicate(nguoidung))
+            if (isAllFilled())
             {
-                if (bus_nguoidung.addUser(nguoidung))
-                    MessageBox.Show("SUCESSFULLY!!!");
+                String username = bunifuMaterialTextbox3.Text;
+                String password = bunifuMaterialTextbox4.Text;
+                String CELLNUMBER = bunifuMaterialTextbox5.Text;
+                int experience = 1;
+                String PATH_IMAGE = bunifuMaterialTextbox6.Text;
+                Nguoidung nguoidung = new Nguoidung(username, password, CELLNUMBER, experience, PATH_IMAGE);
+                if (!bus_nguoidung.checkDuplicate(nguoidung))
+                {
+                    if (bus_nguoidung.addUser(nguoidung))
+                        MessageBox.Show("SUCESSFULLY!!!");
+                    else
+                        MessageBox.Show("Please input again!");
+                }
                 else
-                    MessageBox.Show("Please input again!");
+                {
+                    MessageBox.Show("The username or password is duplicate. Please input again!");
+                }
             }
             else
             {
-                MessageBox.Show("The username or password is duplicate. Please input again!");
+                MessageBox.Show("Please fill in all blank!!!");
             }
             
+            
+
+        }
+
+        private bool isAllFilled()
+        {
+            bool flag = true;
+            if (bunifuMaterialTextbox3.Text == "")
+                 flag = false;
+            if (bunifuMaterialTextbox4.Text == "")
+                flag = false;
+            if (bunifuMaterialTextbox5.Text == "")
+                flag = false;
+            if (bunifuMaterialTextbox6.Text == "")
+                flag = false;
+            return flag; 
 
         }
 
@@ -98,6 +122,19 @@ namespace WindowsFormsApplication1
         private void bunifuMaterialTextbox6_OnValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // open file dialog   
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // image file path  
+                bunifuMaterialTextbox6.Text = open.FileName;
+            }
         }
     }
 }

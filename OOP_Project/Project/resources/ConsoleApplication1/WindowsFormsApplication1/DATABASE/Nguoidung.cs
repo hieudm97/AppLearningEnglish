@@ -32,6 +32,11 @@ namespace WindowsFormsApplication1.DATABASE
             this.EXPERIENCE = experience;
         }
 
+        public Nguoidung(string username, string password, string cELLNUMBER, int experience, string pATH_IMAGE) : this(username, password, cELLNUMBER, experience)
+        {
+            this.PATH_IMAGE = pATH_IMAGE;
+        }
+
         public int ID { get; set; }
         public string USERNAME { get; set; }
         public string PASSWORD { get; set; }

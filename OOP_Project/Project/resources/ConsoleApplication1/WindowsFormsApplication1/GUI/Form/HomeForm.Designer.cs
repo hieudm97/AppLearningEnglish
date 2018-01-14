@@ -37,9 +37,8 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.viewInfoUser1 = new WindowsFormsApplication1.ViewInfoUser();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -144,14 +143,15 @@
             this.panel3.Size = new System.Drawing.Size(175, 414);
             this.panel3.TabIndex = 1;
             // 
-            // panel4
+            // viewInfoUser1
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(530, 41);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(128, 414);
-            this.panel4.TabIndex = 2;
+            this.viewInfoUser1.BackColor = System.Drawing.Color.LightGray;
+            this.viewInfoUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewInfoUser1.Location = new System.Drawing.Point(0, 0);
+            this.viewInfoUser1.Margin = new System.Windows.Forms.Padding(1);
+            this.viewInfoUser1.Name = "viewInfoUser1";
+            this.viewInfoUser1.Size = new System.Drawing.Size(175, 414);
+            this.viewInfoUser1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -169,18 +169,8 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(355, 414);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(483, 414);
             this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // viewInfoUser1
-            // 
-            this.viewInfoUser1.BackColor = System.Drawing.Color.LightGray;
-            this.viewInfoUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewInfoUser1.Location = new System.Drawing.Point(0, 0);
-            this.viewInfoUser1.Margin = new System.Windows.Forms.Padding(1);
-            this.viewInfoUser1.Name = "viewInfoUser1";
-            this.viewInfoUser1.Size = new System.Drawing.Size(175, 414);
-            this.viewInfoUser1.TabIndex = 0;
             // 
             // HomeForm
             // 
@@ -188,7 +178,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 455);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -217,7 +206,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ViewInfoUser viewInfoUser1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;

@@ -64,6 +64,8 @@ namespace WindowsFormsApplication1
             foreach(Topic tmp in lst_topics)
             {
                 MyTopics uc_myTopic = new MyTopics(tmp);
+                uc_myTopic.Height = tableLayoutPanel1.Height /  tableLayoutPanel1.RowCount;
+                uc_myTopic.Width = tableLayoutPanel1.Width / tableLayoutPanel1.ColumnCount;
                 lstUC_Topic.Add(uc_myTopic);
             }
             return lstUC_Topic;
